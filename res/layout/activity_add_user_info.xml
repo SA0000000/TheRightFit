@@ -10,7 +10,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".AddUserInfoActivity" >
+    tools:context=".AddUserInfoActivity" 
+    android:padding="10dp"
+    android:background="@color/LavenderBlush">
     
  <TextView
         android:id="@+id/txt1"
