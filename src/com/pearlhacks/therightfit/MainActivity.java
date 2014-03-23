@@ -63,10 +63,10 @@ public class MainActivity extends Activity {
 		
 		//add items to the brand spinner
 		
-		PopulateBrands();
+		//PopulateBrands();
 		
 		//add items to the user spinner
-		PopulateUsers();
+		//PopulateUsers();
 		
     }
     
@@ -80,16 +80,15 @@ public class MainActivity extends Activity {
     				//get all the data from the database and store it in some local variable or list
     				//that list needs to be declared final
     				Log.v("Populate Brands"," Inside the function for adding items to brands spinner!!!");
-    		    	SQLiteDatabase db = getReadDB();
+    		    	final SQLiteDatabase db = getReadDB();
     		    	Cursor c = db.rawQuery("SELECT * FROM brand ORDER BY name", null);
     				final SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(MainActivity.this, android.R.layout.simple_spinner_item, c, new String[] {"name"},new int[] {android.R.id.text1});
-    		        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-    			
+    		        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);    			
     				brands.post(new Runnable() {
     					@Override
     					public void run() {
     				        brands.setAdapter(mAdapter);
+    				        db.close();
     						//do something like spinner.add items here 
     						//here your spinner is 'brands'
     					}
@@ -103,17 +102,20 @@ public class MainActivity extends Activity {
     	new Thread(new Runnable(){
     		@Override
     		public void run(){
-    				Spinner usrs=(Spinner)findViewById(R.id.spnr_select_usr);
+    				final Spinner usrs=(Spinner)findViewById(R.id.spnr_select_usr);
     				//get all the data from the database and store it in some local variable or list
     				//that list needs to be declared final
     				Log.v("Populate Users"," Inside the function for adding items to User spinner!!!");
-    				
-    				
-    			
+    				final SQLiteDatabase db = getReadDB();
+    		    	Cursor c = db.rawQuery("SELECT * FROM user ORDER BY name", null);
+    				final SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(MainActivity.this, android.R.layout.simple_spinner_item, c, new String[] {"name"},new int[] {android.R.id.text1});
+    		        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	
     				usrs.post(new Runnable() {
     					@Override
     					public void run() {
-    	
+    				        usrs.setAdapter(mAdapter);
+    				        db.close();
     						//do something like spinner.add items here 
     						//here your spinner is 'brands'
     					}
