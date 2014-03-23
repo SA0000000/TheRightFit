@@ -30,6 +30,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pearlhacks.therightfit.MainActivity" />
         </activity>
+        <activity
+            android:name="com.pearlhacks.therightfit.GetSizeActivity"
+            android:label="@string/title_activity_get_size" >
+        </activity>
     </application>
 
 </manifest>

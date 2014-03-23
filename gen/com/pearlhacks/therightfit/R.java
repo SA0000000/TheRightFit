@@ -50,11 +50,13 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_add_user_info=0x7f030000;
-        public static final int activity_main=0x7f030001;
+        public static final int activity_get_size=0x7f030001;
+        public static final int activity_main=0x7f030002;
     }
     public static final class menu {
         public static final int add_user_info=0x7f080000;
-        public static final int main=0x7f080001;
+        public static final int get_size=0x7f080001;
+        public static final int main=0x7f080002;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -63,6 +65,7 @@ public final class R {
         public static final int get_my_size=0x7f050002;
         public static final int hello_world=0x7f050007;
         public static final int title_activity_add_user_info=0x7f050006;
+        public static final int title_activity_get_size=0x7f05000f;
         /**  Activity Add User Info 
          */
         public static final int txt1=0x7f050008;

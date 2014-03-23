@@ -30,9 +30,12 @@ public class MainActivity extends Activity {
 				getUserSize();
 				
 				//Create a new intent and pass user_id, and brand_name/brand_id through it to the next activity
-				Intent myintent =new Intent(MainActivity.this,GetSizeActivity.this);
+				Intent myintent =new Intent(MainActivity.this,GetSizeActivity.class);
 				
 				//here add code to pass data to the intent
+				
+				
+				//start activity
 				startActivity(myintent);
 			}
 		};
