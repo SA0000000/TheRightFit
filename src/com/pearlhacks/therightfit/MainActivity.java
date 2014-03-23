@@ -15,7 +15,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -63,19 +62,19 @@ public class MainActivity extends Activity {
 		
 		//add items to the brand spinner
 		
-		//PopulateBrands();
+		PopulateBrands();
 		
 		//add items to the user spinner
-		//PopulateUsers();
+		PopulateUsers();
 		
     }
     
     
     //this function adds items to the Brand spinner
     void PopulateBrands(){
-    	new Thread(new Runnable(){
-    		@Override
-    		public void run(){
+//    	new Thread(new Runnable(){
+//    		@Override
+//    		public void run(){
     				final Spinner brands=(Spinner)findViewById(R.id.spnr_select_brand);
     				//get all the data from the database and store it in some local variable or list
     				//that list needs to be declared final
@@ -83,25 +82,26 @@ public class MainActivity extends Activity {
     		    	final SQLiteDatabase db = getReadDB();
     		    	Cursor c = db.rawQuery("SELECT * FROM brand ORDER BY name", null);
     				final SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(MainActivity.this, android.R.layout.simple_spinner_item, c, new String[] {"name"},new int[] {android.R.id.text1});
-    		        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);    			
-    				brands.post(new Runnable() {
-    					@Override
-    					public void run() {
+    		       // mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);    			
+//    				brands.post(new Runnable() {
+//    					@Override
+//    					public void run() {
+    						mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     				        brands.setAdapter(mAdapter);
     				        db.close();
     						//do something like spinner.add items here 
     						//here your spinner is 'brands'
-    					}
-    				});
-    			
-    		}
-    		}).start();
+//    					}
+//    				});
+//    			
+//    		}
+//    		}).start();
     }
     
     void PopulateUsers(){
-    	new Thread(new Runnable(){
-    		@Override
-    		public void run(){
+//    	new Thread(new Runnable(){
+//    		@Override
+//    		public void run(){
     				final Spinner usrs=(Spinner)findViewById(R.id.spnr_select_usr);
     				//get all the data from the database and store it in some local variable or list
     				//that list needs to be declared final
@@ -109,20 +109,19 @@ public class MainActivity extends Activity {
     				final SQLiteDatabase db = getReadDB();
     		    	Cursor c = db.rawQuery("SELECT * FROM user ORDER BY name", null);
     				final SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(MainActivity.this, android.R.layout.simple_spinner_item, c, new String[] {"name"},new int[] {android.R.id.text1});
-    		        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-	
-    				usrs.post(new Runnable() {
-    					@Override
-    					public void run() {
+//    				usrs.post(new Runnable() {
+//    					@Override
+//    					public void run() {
+    						mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     				        usrs.setAdapter(mAdapter);
     				        db.close();
     						//do something like spinner.add items here 
     						//here your spinner is 'brands'
-    					}
-    				});
-    			
-    		}
-    		}).start();
+//    					}
+//    				});
+//    			
+//    		}
+//    		}).start();
     	
     }
 
