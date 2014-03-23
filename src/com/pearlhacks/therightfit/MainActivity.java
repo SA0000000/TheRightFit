@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -40,7 +41,7 @@ public class MainActivity extends Activity {
 				
 				//here add code to pass data to the intent
 				
-				
+		    	
 				//start activity
 				startActivity(myintent);
 			}

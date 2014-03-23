@@ -17,7 +17,7 @@ public class DBHelper extends SQLiteOpenHelper
 {
 private static String TAG = "DataBaseHelper"; // Tag just for the LogCat window
 //destination path (location) of our database on device
-private static String DB_PATH = "/data/data/com.example.myfirstapp/databases/"; 
+private static String DB_PATH = "/data/data/com.pearlhacks.therightfit/databases/"; 
 private static String DB_NAME ="theRightFit.sqlite";// Database name
 private SQLiteDatabase mDataBase; 
 private final Context mContext;

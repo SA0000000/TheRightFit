@@ -94,8 +94,8 @@ public class AddUserInfoActivity extends Activity {
 
     private void addUser(String name, float bust, float waist, float hip, float inseam){
     	SQLiteDatabase db = getWriteDB();//SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READWRITE);
-		String foo = "FOO";
-        db.execSQL("INSERT INTO brand(_id, name) VALUES(null,'"+foo+"')"); 
+		String query = "INSERT INTO user VALUES(null,'%s', %f,%f,%f,%f)"; 
+        db.execSQL(String.format(query, name, bust, waist, hip, inseam));
         db.close(); // Closing database connection
     }
     private SQLiteDatabase getWriteDB(){
