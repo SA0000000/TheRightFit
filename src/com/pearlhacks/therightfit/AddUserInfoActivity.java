@@ -1,5 +1,9 @@
 package com.pearlhacks.therightfit;
 
+import java.io.IOException;
+
+import com.pearlhacks.therightfit.DBHelper;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -8,18 +12,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 
 public class AddUserInfoActivity extends Activity {
-	
+	private static String DB_PATH = "/data/data/com.example.myfirstapp/databases/"; 
+	private static String DB_NAME ="theRightFit.sqlite";// Database name
 	private OnClickListener btnAddUserClickListener =new OnClickListener(){
 		@Override
 		public void onClick(View v) {
 			// Save User Info and add user name to the drop down list on the main activity
+	        String name = ((EditText)findViewById(R.id.edit_name)).getText().toString();
+	        float bust = Float.parseFloat(((EditText)findViewById(R.id.edit_bust)).getText().toString());
+	        float waist = Float.parseFloat(((EditText)findViewById(R.id.edit_waist)).getText().toString());
+	        float hip = Float.parseFloat(((EditText)findViewById(R.id.edit_waist)).getText().toString());
+	        float inseam = Float.parseFloat(((EditText)findViewById(R.id.edit_waist)).getText().toString());
+			addUser(name, bust, waist, hip, inseam);
 			Toast.makeText(AddUserInfoActivity.this, "Your Data Has Been Saved!!Proceed to get your fit!!", Toast.LENGTH_SHORT).show();
 		}
 	};
@@ -76,4 +92,33 @@ public class AddUserInfoActivity extends Activity {
 	      Log.v("In onStop"," Ready to stop activity!!!");
 	   }
 
+    private void addUser(String name, float bust, float waist, float hip, float inseam){
+    	SQLiteDatabase db = getWriteDB();//SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READWRITE);
+		String foo = "FOO";
+        db.execSQL("INSERT INTO brand(_id, name) VALUES(null,'"+foo+"')"); 
+        db.close(); // Closing database connection
+    }
+    private SQLiteDatabase getWriteDB(){
+    	SQLiteDatabase db;
+    	DBHelper myDbHelper = new DBHelper(this);
+	    try {
+	
+	    	myDbHelper.createDataBase();
+	
+		} catch (IOException ioe) {
+	
+			throw new Error("Unable to create database");
+	
+		}
+		try {
+	
+			myDbHelper.openDataBase();
+			myDbHelper.close();
+			db = myDbHelper.getWritableDatabase();
+	
+		}catch(SQLException sqle){
+			throw sqle;
+		}
+		return db;
+    }
 }
