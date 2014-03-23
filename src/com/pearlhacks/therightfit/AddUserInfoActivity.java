@@ -33,8 +33,8 @@ public class AddUserInfoActivity extends Activity {
 	        String name = ((EditText)findViewById(R.id.edit_name)).getText().toString();
 	        float bust = Float.parseFloat(((EditText)findViewById(R.id.edit_bust)).getText().toString());
 	        float waist = Float.parseFloat(((EditText)findViewById(R.id.edit_waist)).getText().toString());
-	        float hip = Float.parseFloat(((EditText)findViewById(R.id.edit_waist)).getText().toString());
-	        float inseam = Float.parseFloat(((EditText)findViewById(R.id.edit_waist)).getText().toString());
+	        float hip = Float.parseFloat(((EditText)findViewById(R.id.edit_hip)).getText().toString());
+	        float inseam = Float.parseFloat(((EditText)findViewById(R.id.edit_inseam)).getText().toString());
 			addUser(name, bust, waist, hip, inseam);
 			Toast.makeText(AddUserInfoActivity.this, "Your Data Has Been Saved!!Proceed to get your fit!!", Toast.LENGTH_SHORT).show();
 		}

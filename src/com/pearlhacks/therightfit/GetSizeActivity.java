@@ -46,7 +46,7 @@ public class GetSizeActivity extends Activity {
 	}
 	private String[] callGetSize(Person p, BrandMeasurements bm){
 		String topSize = getSize.getTopSize(bm.tList, p.Bust);
-		String botSize = getSize.getBottomSize(bm.bList, p.Hip, p.Waist, p.Inseam);
+		String botSize = getSize.getBottomSize(bm.bList, p.Waist, p.Hip ,p.Inseam);
 		String dressSize = getSize.getDressSize(bm.dList, p.Bust, p.Waist);
 		String s[] = new String[3];
 		s[0] = topSize;

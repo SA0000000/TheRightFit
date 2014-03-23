@@ -15,7 +15,7 @@ public class getSize {
 			diff = Math.abs(o.Bust - Bust);
 			if ( diff <= min){
 					min = diff;
-					Size = o.Size + Character.toUpperCase(o.Type); 		
+					Size = o.Size + " "+ Character.toUpperCase(o.Type); 		
 			}	
 			/*if (diff > diffPrev)
 				return Size; 
@@ -39,7 +39,7 @@ public class getSize {
 				diff = (float) (Math.pow(o.Waist-Waist,2)+Math.pow(o.Bust-Bust,2));
 			if (diff < min){
 				min = diff; 
-				Size = o.Size + Character.toUpperCase(o.Type); 		
+				Size = o.Size + " "+ Character.toUpperCase(o.Type); 		
 			}
 			/*if (diff > diffPrev)
 				return Size; 
@@ -48,23 +48,23 @@ public class getSize {
 		return Size; 
 	}
 	
-	public static String getBottomSize(List<Bottom> brandBottomSizes, float Hip, float Waist, float Inseam){
+	public static String getBottomSize(List<Bottom> brandBottomSizes, float Waist, float Hip, float Inseam){
 		
-		float min = 5000; 
+		float min = 1000000; 
 		float diff = 0; 
 		String Size = ""; 
 		for (Bottom o : brandBottomSizes){
 			if (o.Waist == 0)
-				diff = (float) (Math.pow(o.Inseam-Inseam,2)+Math.pow(o.Hip-Hip,2));
+				diff = (float) (Math.abs(o.Inseam-Inseam)+Math.abs(o.Hip-Hip));
 			else if (o.Hip == 0)
-				diff = (float) (Math.pow(o.Waist-Waist,2)+Math.pow(o.Inseam-Inseam,2));
+				diff = (float) (Math.abs(o.Waist-Waist)+Math.abs(o.Inseam-Inseam));
 			else if (o.Inseam == 0)
-				diff = (float) (Math.pow(o.Waist-Waist,2)+Math.pow(o.Hip-Hip,2));
+				diff = (float) (Math.abs(o.Waist-Waist)+Math.abs(o.Hip-Hip));
 			else 
-				diff = (float) (Math.pow(o.Waist-Waist,2)+Math.pow(o.Hip-Hip,2)+Math.pow(o.Inseam-Inseam,2));
+				diff = (float) (Math.abs(o.Waist-Waist)+Math.abs(o.Hip-Hip)+Math.abs(o.Inseam-Inseam));
 			if (diff < min){
 				min = diff; 
-				Size = o.Size + Character.toUpperCase(o.Type); 		
+				Size = o.Size + " "+ Character.toUpperCase(o.Type); 		
 			}
 		}
 		return Size; 
