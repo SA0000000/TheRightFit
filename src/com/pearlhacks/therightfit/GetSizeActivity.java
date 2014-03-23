@@ -9,6 +9,10 @@ public class GetSizeActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Bundle extras = getIntent().getExtras();
+		int bid = extras.getInt("BRAND_ID",1);
+		int uid = extras.getInt("USER_ID",1);
+		
 		setContentView(R.layout.activity_get_size);
 	}
 
