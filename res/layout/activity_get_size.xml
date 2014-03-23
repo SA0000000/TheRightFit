@@ -15,7 +15,6 @@
         android:id="@+id/txt_pg_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="10dp"
@@ -24,85 +23,112 @@
  
  
  <TextView
-        android:id="@+id/txt2"
+        android:id="@+id/txt_usr_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-	    android:layout_below="@id/txt1"
+	    android:layout_below="@id/txt_pg_info"
         android:layout_marginTop="10dp"
         android:padding="20dip"
         android:text="@string/txt2" />
  
- <EditText android:id="@+id/edit_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt2"
-        android:padding="15dip"
-	    android:layout_marginTop="5dp"
-	    android:layout_marginLeft="7dp"
-	    android:layout_centerInParent="true"
-	    android:layout_alignBottom="@+id/txt2"
-	    
-	    android:layout_toRightOf="@id/txt2" />
+ <TextView
+     android:id="@+id/txt_brand_name"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentRight="true"
+     android:layout_alignTop="@+id/txt_usr_name"
+     android:layout_below="@id/txt_pg_info"
+     android:layout_marginTop="5dp"
+     android:padding="15dip"
+     android:text="@string/txt_brnd" />
+ 
  
  <TextView
-        android:id="@+id/txt3"
+        android:id="@+id/txt_sxn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-	    android:layout_below="@id/txt2"
+	    android:layout_below="@id/txt_usr_name"
         android:layout_marginTop="10dp"
         android:padding="20dip"
-        android:text="@string/txt3" />
+        android:text="@string/txt_sxn" />
  
- <EditText android:id="@+id/edit_bust"
+ <TextView android:id="@+id/txt_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/txt3"
+        android:text="@string/txt_size"
         android:padding="15dip"
 	    android:layout_marginTop="5dp"
 	    android:layout_marginLeft="7dp"
-	    android:layout_alignBottom="@+id/txt3"
-	    android:layout_alignLeft="@+id/edit_name"
+      	android:layout_alignTop="@+id/txt_sxn"
+	    android:layout_alignBaseline="@+id/txt_sxn"
 	    android:layout_centerInParent="true"
-	    android:layout_below="@id/edit_name"
-	    android:layout_toRightOf="@id/txt3" />
-
-<TextView
-        android:id="@+id/txt4"
+	    android:layout_toRightOf="@id/txt_sxn" />
+ 
+ <TextView
+        android:id="@+id/txt_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-	    android:layout_below="@id/txt3"
+	    android:layout_below="@id/txt_sxn"
         android:layout_marginTop="10dp"
         android:padding="20dip"
-        android:text="@string/txt4" />
+        android:text="@string/txt_top" />
  
- <EditText android:id="@+id/edit_waist"
+ <TextView android:id="@+id/txt_top_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/txt4"
+        android:text="@string/txt_size"
         android:padding="15dip"
 	    android:layout_marginTop="5dp"
 	    android:layout_marginLeft="7dp"
-	    android:layout_alignBottom="@+id/txt4"
-	    android:layout_alignLeft="@+id/edit_name"
+      	android:layout_alignTop="@+id/txt_top"
+	    android:layout_alignBaseline="@+id/txt_top"
 	    android:layout_centerInParent="true"
-	    android:layout_below="@id/edit_bust"
-	    android:layout_toRightOf="@id/txt4" />
-
+	    android:layout_toRightOf="@id/txt_top"
+	    android:layout_alignLeft="@+id/txt_size" />
  
-<TextView
-        android:id="@+id/txt5"
+ <TextView
+        android:id="@+id/txt_dress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-	    android:layout_below="@id/txt4"
+	    android:layout_below="@id/txt_top"
         android:layout_marginTop="10dp"
         android:padding="20dip"
-        android:text="@string/txt5" />
+        android:text="@string/txt_dress" />
  
+  <TextView
+      android:id="@+id/txt_dress_size"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBaseline="@+id/txt_dress"
+      android:layout_alignTop="@+id/txt_dress"
+      android:layout_alignLeft="@+id/txt_size"
+      android:padding="15dip"
+      android:text="@string/txt_size" />
  
+  <TextView
+        android:id="@+id/txt_bottoms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+	    android:layout_below="@id/txt_dress"
+        android:layout_marginTop="10dp"
+        android:padding="20dip"
+        android:text="@string/txt_bottom" />
+  
+   <TextView
+      android:id="@+id/txt_bottom_size"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignBaseline="@+id/txt_bottoms"
+      android:layout_alignTop="@+id/txt_bottoms"
+      android:layout_alignLeft="@+id/txt_size"
+      android:padding="15dip"
+      android:text="@string/txt_size" />
+
  
 
 </RelativeLayout>

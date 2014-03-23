@@ -23,15 +23,23 @@ Select Brand                <item>Select Brand</item>
 
     <!-- Activity Add User Info -->
     <string name="txt1">Please Enter your details</string>
-    <string name="txt2"> Name </string>
-    <string name="txt3"> Bust </string>
-    <string name="txt4">Waist </string>
-    <string name="txt5"> Hip  </string>
-    <string name="txt6">InSeam</string>
     <string name="txt7">Store User Info</string>
     <string name="title_activity_get_size">GetSizeActivity</string>
     
     <!-- Activity Get Size Info -->
     <string name="txt_pg_info">Your Most Appropriate Measurement</string>
+    <string name="txt_brnd">Brand</string>
+    <string name="txt_top">Tops</string>
+    <string name="txt_dress">Dress</string>
+    <string name="txt_bottom">Bottoms</string>
+    <string name="txt_size">Your Size</string>
+    <string name="txt_sxn">Your Size</string>
+    
+    <!-- Common to Activity Add User and Activity Get Size -->
+    <string name="txt2"> Name </string>
+    <string name="txt3"> Bust </string>
+    <string name="txt4">Waist </string>
+    <string name="txt5"> Hip  </string>
+    <string name="txt6">InSeam</string>
 
 </resources>
