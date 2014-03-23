@@ -40,8 +40,13 @@ public class MainActivity extends Activity {
 				Intent myintent =new Intent(MainActivity.this,GetSizeActivity.class);
 				
 				//here add code to pass data to the intent
-				
-		    	
+		        Spinner brandSpinner = (Spinner) findViewById(R.id.spnr_select_brand);
+				int bid = Integer.parseInt(((Cursor)brandSpinner.getSelectedItem()).getString(0).toString());
+		        Spinner userSpinner = (Spinner) findViewById(R.id.spnr_select_usr);
+				int uid = Integer.parseInt(((Cursor)userSpinner.getSelectedItem()).getString(0).toString());
+				myintent.putExtra("BRAND_ID", bid);
+		    	myintent.putExtra("USER_ID", uid);
+
 				//start activity
 				startActivity(myintent);
 			}
