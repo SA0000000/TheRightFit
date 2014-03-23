@@ -28,6 +28,12 @@ public class MainActivity extends Activity {
 				// and gives the size info of the user in a different activity
 				// Call a function that does that and do it on a different thread
 				getUserSize();
+				
+				//Create a new intent and pass user_id, and brand_name/brand_id through it to the next activity
+				Intent myintent =new Intent(MainActivity.this,GetSizeActivity.this);
+				
+				//here add code to pass data to the intent
+				startActivity(myintent);
 			}
 		};
 		
