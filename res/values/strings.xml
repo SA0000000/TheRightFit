@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TheRightFit</string>
+    <string name="action_settings">Settings</string>
+    <string name="get_my_size">Get best fit</string>
+    <string name="add_user_info">Add User Info</string>
+    <string name="txt_sel_usr">Select User Name</string>
+    <string name="txt_sel_brand">Select Brand Name</string>
+
+    <string-array name="spnr_select_usr">
+Select User        <item>Select User</item>
+    </string-array>
+    <string-array name="spnr_select_brand">
+Select Brand        <item>Select Brand</item>
+        <item>HandM</item>
+        <item>Banana Republic</item>
+        <item>Old Navy</item>
+    </string-array>
+
+    <string name="title_activity_add_user_info">AddUserInfoActivity</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <!-- Activity Add User Info -->
+    <string name="txt1">Please Enter your details</string>
+    <string name="txt2"> Name </string>
+    <string name="txt3"> Bust </string>
+    <string name="txt4">Waist </string>
+    <string name="txt5"> Hip  </string>
+    <string name="txt6">InSeam</string>
+    <string name="txt7">Store User Info</string>
+
+</resources>
