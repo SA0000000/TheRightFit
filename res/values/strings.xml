@@ -33,7 +33,7 @@ Select Brand                <item>Select Brand</item>
     <string name="txt_dress">Dress</string>
     <string name="txt_bottom">Bottoms</string>
     <string name="txt_size">Your Size</string>
-    <string name="txt_sxn">Your Size</string>
+    <string name="txt_sxn">Section</string>
     
     <!-- Common to Activity Add User and Activity Get Size -->
     <string name="txt2"> Name </string>
