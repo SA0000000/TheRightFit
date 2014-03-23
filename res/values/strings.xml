@@ -30,5 +30,8 @@ Select Brand                <item>Select Brand</item>
     <string name="txt6">InSeam</string>
     <string name="txt7">Store User Info</string>
     <string name="title_activity_get_size">GetSizeActivity</string>
+    
+    <!-- Activity Get Size Info -->
+    <string name="txt_pg_info">Your Most Appropriate Measurement</string>
 
 </resources>

@@ -28,25 +28,26 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090012;
+        public static final int action_settings=0x7f090013;
         public static final int btn_Add_user=0x7f09000b;
-        public static final int btn_add_user=0x7f09000c;
-        public static final int btn_get_size=0x7f090011;
+        public static final int btn_add_user=0x7f09000d;
+        public static final int btn_get_size=0x7f090012;
         public static final int edit_bust=0x7f090004;
         public static final int edit_hip=0x7f090008;
         public static final int edit_inseam=0x7f09000a;
         public static final int edit_name=0x7f090002;
         public static final int edit_waist=0x7f090006;
-        public static final int spnr_select_brand=0x7f090010;
-        public static final int spnr_select_usr=0x7f09000e;
+        public static final int spnr_select_brand=0x7f090011;
+        public static final int spnr_select_usr=0x7f09000f;
         public static final int txt1=0x7f090000;
         public static final int txt2=0x7f090001;
         public static final int txt3=0x7f090003;
         public static final int txt4=0x7f090005;
         public static final int txt5=0x7f090007;
         public static final int txt6=0x7f090009;
-        public static final int txt_sel_brand=0x7f09000f;
-        public static final int txt_sel_usr=0x7f09000d;
+        public static final int txt_pg_info=0x7f09000c;
+        public static final int txt_sel_brand=0x7f090010;
+        public static final int txt_sel_usr=0x7f09000e;
     }
     public static final class layout {
         public static final int activity_add_user_info=0x7f030000;
@@ -75,6 +76,9 @@ public final class R {
         public static final int txt5=0x7f05000c;
         public static final int txt6=0x7f05000d;
         public static final int txt7=0x7f05000e;
+        /**  Activity Get Size Info 
+         */
+        public static final int txt_pg_info=0x7f050010;
         public static final int txt_sel_brand=0x7f050005;
         public static final int txt_sel_usr=0x7f050004;
     }
