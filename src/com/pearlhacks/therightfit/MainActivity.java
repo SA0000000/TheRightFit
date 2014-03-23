@@ -1,9 +1,15 @@
 package com.pearlhacks.therightfit;
 
+import java.io.IOException;
+
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -70,17 +76,20 @@ public class MainActivity extends Activity {
     	new Thread(new Runnable(){
     		@Override
     		public void run(){
-    				Spinner brands=(Spinner)findViewById(R.id.spnr_select_brand);
+    				final Spinner brands=(Spinner)findViewById(R.id.spnr_select_brand);
     				//get all the data from the database and store it in some local variable or list
     				//that list needs to be declared final
     				Log.v("Populate Brands"," Inside the function for adding items to brands spinner!!!");
-    				
-    				
+    		    	SQLiteDatabase db = getReadDB();
+    		    	Cursor c = db.rawQuery("SELECT * FROM brand ORDER BY name", null);
+    				final SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(MainActivity.this, android.R.layout.simple_spinner_item, c, new String[] {"name"},new int[] {android.R.id.text1});
+    		        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
     			
     				brands.post(new Runnable() {
     					@Override
     					public void run() {
-    	
+    				        brands.setAdapter(mAdapter);
     						//do something like spinner.add items here 
     						//here your spinner is 'brands'
     					}
@@ -113,6 +122,53 @@ public class MainActivity extends Activity {
     		}
     		}).start();
     	
+    }
+
+    private SQLiteDatabase getReadDB(){
+    	SQLiteDatabase db;
+    	DBHelper myDbHelper = new DBHelper(this);
+	    try {
+	
+	    	myDbHelper.createDataBase();
+	
+		} catch (IOException ioe) {
+	
+			throw new Error("Unable to create database");
+	
+		}
+		try {
+	
+			myDbHelper.openDataBase();
+			myDbHelper.close();
+			db = myDbHelper.getReadableDatabase();
+	
+		}catch(SQLException sqle){
+			throw sqle;
+		}
+		return db;
+    }
+    private SQLiteDatabase getWriteDB(){
+    	SQLiteDatabase db;
+    	DBHelper myDbHelper = new DBHelper(this);
+	    try {
+	
+	    	myDbHelper.createDataBase();
+	
+		} catch (IOException ioe) {
+	
+			throw new Error("Unable to create database");
+	
+		}
+		try {
+	
+			myDbHelper.openDataBase();
+			myDbHelper.close();
+			db = myDbHelper.getWritableDatabase();
+	
+		}catch(SQLException sqle){
+			throw sqle;
+		}
+		return db;
     }
     
 //**************Housekeeping functions**********************
